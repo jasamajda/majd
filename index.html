@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moj Mali Portfolio</title>
+    <style>
+        body {
+            font-family: Consolas, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9ecee;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        main {
+            text-align: center;
+            margin-top: 50px; /* Adjusted margin to create space for the fixed navigation */
+        }
+
+        img.mojid-image {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #8fad85;
+            padding: 10px;
+            text-align: center;
+            border-radius: 5px;
+            z-index: 1000;
+            width: 100%;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5em 1em;
+            margin: 0 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            cursor: pointer;
+        }
+
+        nav a:hover {
+            background-color: #6d7e67;
+        }
+
+        section {
+            margin-top: 60px; /* Adjusted margin to create space for the fixed navigation */
+            text-align: center;
+        }
+
+        section img {
+            display: block;
+            margin: auto;
+            max-width: 80%;
+            height: auto;
+            margin-bottom: 30px;
+        }
+
+        section p {
+            text-align: left;
+            margin: 0 auto;
+            max-width: 35%;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#" onclick="showContent('kućište')">kućište</a>
+        <a href="#" onclick="showContent('cvetak')">cvetak</a>
+        <a href="#" onclick="showContent('bff')">bff</a>
+        <a href="#" onclick="showContent('more')">more</a>
+    </nav>
+
+    <main>
+        <section id="kućišteContent">
+            <img src="mojid.png" class="mojid-image" alt="mojid starting image">
+            <p style="font-family:Consolas">Dobrodošli u moj mali portfolio.
+            Uživajte u mojim malim radovima. <3</p>
+        </section>
+
+        <section id="cvetakContent" style="display: none;">
+            <a href="https://www.youtube.com/playlist?list=PLx0q7abKXxa9jm1cYiIcuWVmEgbCXpx3e"><img src="gif.gif" alt="Cvetak Image"></a>
+            <p style="font-family:Consolas">Ja sam rob nostalgije i ovaj rad predstavlja baš to. Tetovirana dva cveta sa mog crteža iz vrtića koji je do dan danas okačen u mojoj sobi.</p>
+        </section>
+
+        <section id="bffContent" style="display: none;">
+            <img src="anja.png" alt="Bff Image">
+            <p style="font-family:Consolas">Poster za moju drugaricu Anju. Inspirisana našim odlaskom u Ljubljanu, napravila sam kolaž koji se sastoji od svih stvari koje sam pokupila tamo. </p>
+        </section>
+
+        <section id="moreContent" style="display: none;">
+            <img src="aaa.jpg" alt="More Image">
+            <p style="font-family:Consolas">Nisam crtala baš dugo. Ušla sam u program da vidim da li još uvek umem ili sam izgubila osećaj i ovo je nastalo.</p>
+        </section>
+    </main>
+
+    <script>
+        function showContent(contentId) {
+            // Hide all content sections
+            document.querySelectorAll('section').forEach(function (element) {
+                element.style.display = 'none';
+            });
+
+            // Show the selected content
+            document.getElementById(contentId + 'Content').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
